@@ -7,26 +7,14 @@ namespace XamarinLabelFontAutoSize
 {
     public static class FontSizer
     {
-        /// <summary>
-        /// Sets the char value for splitting strings in specific cultures/locales. Add
-        /// a culture to specify the word or morpheme delimiting value.
-        /// </summary>
+        /// <summary>Sets the char value for splitting strings in specific cultures/locales. Add a culture to specify the word or morpheme delimiting value.</summary>
         static Dictionary<string, char> localeWordDelimiters = new Dictionary<string, char>
         {
             { "en-US", ' ' }
         };
 
-        /// <summary>
-        /// Calculates the larget possible font size for a label within the given constraints
-        /// </summary>
-        /// <param name="label"></param>
-        /// <param name="minFontSize"></param>
-        /// <param name="maxFontSize"></param>
-        /// <param name="containerWidth"></param>
-        /// <param name="containerHeight"></param>
-        /// <param name="wordSafe"></param>
-        /// <param name="sizeForWidth"></param>
-        /// <returns>font size value as double</returns>
+        /// <summary>Calculates the larget possible font size for a label within the given constraints, do not pass values for wordSafe or sizeForWidth</summary>
+        /// <param name="label"></param><param name="minFontSize"></param><param name="maxFontSize"></param><param name="containerWidth"></param><param name="containerHeight"></param><param name="wordSafe"></param><param name="sizeForWidth"></param><returns>font size value as double</returns>
         public static double CalculateMaxFontSize(Label label, int minFontSize, int maxFontSize, double containerWidth, double containerHeight, bool wordSafe = true, bool sizeForWidth = false)
         {
             // calculate label sizes based on min and max font sizes
@@ -88,10 +76,7 @@ namespace XamarinLabelFontAutoSize
             return lowerFontCalc.FontSize;
         }
 
-        /// <summary>
-        /// Gets the assigned string delimiter for separating words in the current language,
-        /// based on Current UI Culture setting
-        /// </summary>
+        /// <summary>Gets the assigned string delimiter for separating words in the current language, based on Current UI Culture setting</summary>
         /// <returns>delimiter value as char, fallback set to ' '</returns>
         static char GetLocaleWordDelimiter()
         {

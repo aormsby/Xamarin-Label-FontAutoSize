@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace XamarinLabelFontAutoSize
+namespace XamarinLabelFontSizer
 {
     public static class FontSizer
     {

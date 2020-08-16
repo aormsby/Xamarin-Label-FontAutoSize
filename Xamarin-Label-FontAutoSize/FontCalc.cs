@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace XamarinLabelFontAutoSize
+namespace XamarinLabelFontSizer
 {
     struct FontCalc
     {

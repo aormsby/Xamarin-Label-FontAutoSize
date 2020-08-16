@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Label-FontAutoSize", "Xamarin-Label-FontAutoSize\Xamarin-Label-FontAutoSize.csproj", "{A5163186-6729-4610-AD63-A92114FA388E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Label-FontSizer", "Xamarin-Label-FontAutoSize\Xamarin-Label-FontSizer.csproj", "{A5163186-6729-4610-AD63-A92114FA388E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

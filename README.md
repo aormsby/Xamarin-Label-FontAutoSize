@@ -55,8 +55,9 @@ public static double CalculateMaxFontSize(Label label, int minFontSize, int maxF
 The main feature I added to the base project is the 'word safe' functionality. Originally, the sizing was only performed using container height in the conditions checking if the label fit. It kept the label from extending beyond the bottom of the container, but there was a possibility that if the text was sized large enough, longer words could be split over multiple lines of the label, resulting in obvious visual bugs.
 
 **Top:** original || **Bottom:** Word Safe enabled
+(same space constraints)
 
-[image tbd]
+![shows difference in label font size with word safe disbaled and enabled]("img/word-safe-before-after.png")
 
 To solve this problem, I modified the `CalculateMaxFontSize()` function to also perform a width check using the longest word of the label as the sizing object. (This is the main reason the label text is modified within the function.) To use word safe, don't the `bool wordSafe` or the `bool sizeForWidth` when calling the function.
 
@@ -94,6 +95,8 @@ double labelFontSize = FontSizer.CalculateMaxFontSize(ghostLabel, 10, 200, stack
 
 myLabel.FontSize = labelFontSize;
 ```
+
+![shows a ghost sizing a ghost label in a Xamarin mobile app]("img/ghost-label.png")
 
 This method ensures the label you want to size is never modified, and it works just the same. :wink:
 

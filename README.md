@@ -21,10 +21,14 @@ While the Font Sizer handles key use cases, it can still be improved in many way
 ## Setup and Use
 
 1. Import the Font Sizer project into your solution.
-2. Add references to the Font Sizer in ***all*** of your other projects.
-3. Include the Font sizer namespace in the classes where you want to use it -  `using XamarinLabelFontSizer;`
-4. Call the static sizing function with your sizing parameters. It returns a `double` value. **Recommended:** Use the [Ghost Sizing](#ghost-sizing-tm) method described below.
-5. Set the font size of a label to the returned value.
+![visual studio, add existing project](img/add-project.png)
+![visual studio, select project](img/select-project.png)
+1. Add references to the Font Sizer in ***all*** of your other projects.
+![visual studio, add reference](img/add-reference.png)
+![visual studio, select reference](img/select-reference.png)
+1. Include the Font sizer namespace in the classes where you want to use it -  `using XamarinLabelFontSizer;`
+2. Call the static sizing function with your sizing parameters. It returns a `double` value. **Recommended:** Use the [Ghost Sizing](#ghost-sizing-tm) method described below.
+3. Set the font size of a label to the returned value.
 
 ```csharp
 double labelFontSize = FontSizer.CalculateMaxFontSize(myLabel, 10, 200, stackLayout.Width, stackLayout.Height / 3);
@@ -46,9 +50,9 @@ public static double CalculateMaxFontSize(Label label, int minFontSize, int maxF
   
 - `double` **containerWidth** / containerHeight - The width and height of the space the label should fit. Instead of calculating based on the containing object, these have been made double values to allow for fractional space constraints like `myContainer / 2` or simply `240`.
   
-- `bool` **wordSafe** - Enables the 'word safe' width calculations to prevent word splitting across multiple lines. The default is `true`. It is not intended to be set by the calling fuction at this time.
+- `bool` **wordSafe** - Enables the 'word safe' width calculations to prevent word splitting across multiple lines. The default is `true`. It is not intended to be set by the calling function at this time.
   
-- `bool` **sizeForWidth** - Used to set calculation values during a 'word safe' The default is `false`, and it is enabled during the function call when needed. It is not intended to be set by the calling fuction at this time.
+- `bool` **sizeForWidth** - Used to set calculation values during a 'word safe' The default is `false`, and it is enabled during the function call when needed. It is not intended to be set by the calling function at this time.
 
 ### 'Word Safe' Details
 
@@ -57,7 +61,7 @@ The main feature I added to the base project is the 'word safe' functionality. O
 **Top:** original || **Bottom:** Word Safe enabled
 (same space constraints)
 
-![shows difference in label font size with word safe disbaled and enabled]("img/word-safe-before-after.png")
+![shows the difference in label font size with word safe disabled and enabled](img/word-safe-before-after.png)
 
 To solve this problem, I modified the `CalculateMaxFontSize()` function to also perform a width check using the longest word of the label as the sizing object. (This is the main reason the label text is modified within the function.) To use word safe, don't the `bool wordSafe` or the `bool sizeForWidth` when calling the function.
 
@@ -96,7 +100,7 @@ double labelFontSize = FontSizer.CalculateMaxFontSize(ghostLabel, 10, 200, stack
 myLabel.FontSize = labelFontSize;
 ```
 
-![shows a ghost sizing a ghost label in a Xamarin mobile app]("img/ghost-label.png")
+![shows a ghost sizing a ghost label in a Xamarin mobile app](img/ghost-label.png)
 
 This method ensures the label you want to size is never modified, and it works just the same. :wink:
 
@@ -104,7 +108,7 @@ This method ensures the label you want to size is never modified, and it works j
 
 ### Broken Property Bindings (use ghost sizing)
 
-Because of the way C# objects reference data, any label property modifed during the sizing has its binding overriden and replaced with explicit data. (Only the `Text` property at this time.) The ghost sizing method explained in this document gets around this nicely. Ghost sizing is not required, but you should be aware of the risks when not using it.
+Because of the way C# objects reference data, any label property modified during the sizing has its binding overridden and replaced with explicit data. (Only the `Text` property at this time.) The ghost sizing method explained in this document gets around this nicely. Ghost sizing is not required, but you should be aware of the risks when not using it.
 
 ### Word Safe - Space Delimited Words (Localization Issue)
 
@@ -143,7 +147,7 @@ The container view you work with must understand its height limitations. Be care
 
 For example, a label inside a stack layout inside a grid works fine because the stack layout can expand to the grid size just fine
 
-*However*, a label inside a stack layout inside a stack layout lets the label overflow beyond the expected height. The middle stack thinks it can extend forever since the outer stack doesn't have size knowledge from the middle stack. It's a sizing mess, and you'll most likely notice when this is happening.
+*However*, a label inside a stack layout lets the label overflow beyond the expected height. The middle stack thinks it can extend forever since the outer stack doesn't have size knowledge from the middle stack. It's a sizing mess, and you'll most likely notice when this is happening.
 
 (I feel I've done a poor job explaining this, so please read the [StackLayout docs](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/stacklayout#position-and-size-of-child-views) for more info.)
 

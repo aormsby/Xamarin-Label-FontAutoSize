@@ -1,8 +1,6 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Label-FontSizer", "Xamarin-Label-FontSizer\Xamarin-Label-FontSizer.csproj", "{A5163186-6729-4610-AD63-A92114FA388E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FontSizer_SampleProject", "FontSizer_SampleProject", "{7AAA31CC-6A2A-4127-841B-24F452B91FC8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontSizer_Sample.Android", "FontSizer_Sample\FontSizer_Sample.Android\FontSizer_Sample.Android.csproj", "{1B237A84-EAE7-4799-86E5-E4F47247E006}"
@@ -10,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontSizer_Sample.iOS", "FontSizer_Sample\FontSizer_Sample.iOS\FontSizer_Sample.iOS.csproj", "{3C9B4CED-F9E1-40B6-B71B-44018DF90D60}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontSizer_Sample", "FontSizer_Sample\FontSizer_Sample\FontSizer_Sample.csproj", "{D7340544-EC33-4B64-8518-CC7CC5BBD8DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Label-FontSizer", "Xamarin-Label_FontSizer\Xamarin-Label-FontSizer.csproj", "{AD1573C2-F330-4961-8F7B-7FFCBA964532}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,6 @@ Global
 		Release|iPhone = Release|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A5163186-6729-4610-AD63-A92114FA388E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{A5163186-6729-4610-AD63-A92114FA388E}.Release|iPhone.Build.0 = Release|Any CPU
 		{1B237A84-EAE7-4799-86E5-E4F47247E006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B237A84-EAE7-4799-86E5-E4F47247E006}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B237A84-EAE7-4799-86E5-E4F47247E006}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -69,6 +57,18 @@ Global
 		{D7340544-EC33-4B64-8518-CC7CC5BBD8DC}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{D7340544-EC33-4B64-8518-CC7CC5BBD8DC}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{D7340544-EC33-4B64-8518-CC7CC5BBD8DC}.Release|iPhone.Build.0 = Release|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{AD1573C2-F330-4961-8F7B-7FFCBA964532}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1B237A84-EAE7-4799-86E5-E4F47247E006} = {7AAA31CC-6A2A-4127-841B-24F452B91FC8}

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using XamarinLabelFontSizer;
 
@@ -24,7 +19,7 @@ namespace FontSizer_Sample
             frame2.HeightRequest = frameHeight;
             frame3.HeightRequest = frameHeight;
             frame4.HeightRequest = frameHeight;
-
+            
             // for storing the size results to be passed on to the labels
             double sizingResult;
 

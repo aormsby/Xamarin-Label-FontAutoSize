@@ -18,17 +18,27 @@ The Label Font Sizer is a tool for calculating and setting the size of a label's
 
 While the Font Sizer handles key use cases, it can still be improved in many ways. I welcome your fixes, enhancements, and additions.
 
+**Sample Project -** There is a sample project included in this repo in the `FontSizer_Sample` directory. Open the included solution file and run the program.
+
 ## Setup and Use
 
 1. Import the Font Sizer project into your solution.
-![visual studio, add existing project](img/add-project.png)
-![visual studio, select project](img/select-project.png)
-1. Add references to the Font Sizer in ***all*** of your other projects.
-![visual studio, add reference](img/add-reference.png)
-![visual studio, select reference](img/select-reference.png)
-1. Include the Font sizer namespace in the classes where you want to use it -  `using XamarinLabelFontSizer;`
-2. Call the static sizing function with your sizing parameters. It returns a `double` value. **Recommended:** Use the [Ghost Sizing](#ghost-sizing-tm) method described below.
-3. Set the font size of a label to the returned value.
+
+<img src="img/add-project.png" style="max-height:300px;" alt="visual studio, add existing project">
+
+<img src="img/select-project.png" style="max-height:300px;" alt="visual studio, select project">
+
+2. Add references to the Font Sizer in projects that will use it (main shared project is required).
+
+<img src="img/add-reference.png" style="max-height:300px;" alt="visual studio, add reference">
+
+<img src="img/select-reference.png" style="max-height:300px;" alt="visual studio, select reference">
+
+3. Include the Font sizer namespace in the classes where you want to use it -  `using XamarinLabelFontSizer;`
+
+4. Call the static sizing function with your sizing parameters. It returns a `double` value. **Recommended:** Use the [Ghost Sizing](#ghost-sizing-tm) method described below.
+
+5. Set the font size of a label to the returned value.
 
 ```csharp
 double labelFontSize = FontSizer.CalculateMaxFontSize(myLabel, 10, 200, stackLayout.Width, stackLayout.Height / 3);
@@ -61,7 +71,7 @@ The main feature I added to the base project is the 'word safe' functionality. O
 **Top:** original || **Bottom:** Word Safe enabled
 (same space constraints)
 
-![shows the difference in label font size with word safe disabled and enabled](img/word-safe-before-after.png)
+<img src="img/word-safe-before-after.png" style="max-height:300px;" alt="shows the difference in label font size with word safe disabled and enabled">
 
 To solve this problem, I modified the `CalculateMaxFontSize()` function to also perform a width check using the longest word of the label as the sizing object. (This is the main reason the label text is modified within the function.) To use word safe, don't the `bool wordSafe` or the `bool sizeForWidth` when calling the function.
 
@@ -100,7 +110,7 @@ double labelFontSize = FontSizer.CalculateMaxFontSize(ghostLabel, 10, 200, stack
 myLabel.FontSize = labelFontSize;
 ```
 
-![shows a ghost sizing a ghost label in a Xamarin mobile app](img/ghost-label.png)
+<img src="img/ghost-label.png" style="max-height:300px;" alt="shows a ghost sizing a ghost label in a Xamarin mobile app">
 
 This method ensures the label you want to size is never modified, and it works just the same. :wink:
 
